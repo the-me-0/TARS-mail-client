@@ -17,6 +17,7 @@
 ## Roadmap
   - [ ] A friendly user interface (because it counts a lot)
   - [ ] Database integration
+  - [ ] Add HTTPS support
   - [ ] Handling a single GMail account
   - *At this step, the project will be considered as a beta version* 
   - [ ] Multiple accounts
