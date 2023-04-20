@@ -1,10 +1,10 @@
 <div align="center">
 <h1>TARS - Open source web-mail client</h1>
 <h3>Powered by React and Docker</h3>
-[ LOGO ]
-[![forthebadge](https://forthebadge.com/images/badges/powered-by-phoenix.svg)](https://forthebadge.com)
 </div>
 <br/>
+
+[![forthebadge](https://forthebadge.com/images/badges/powered-by-phoenix.svg)](https://forthebadge.com)
 
 ### Table of Contents
 - [Introduction](#introduction)
@@ -30,3 +30,4 @@
 
 ## Contact
   If you want to contact me, you can do it by sending an e-mail to [philippenoah.pro@gmail.com](mailto:philippenoah.pro@gmail.com).
+  
