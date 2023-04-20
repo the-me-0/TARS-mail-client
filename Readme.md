@@ -2,6 +2,7 @@
 <h1>TARS - Open source web-mail client</h1>
 <h3>Powered by React and Docker</h3>
 [ LOGO ]
+[![forthebadge](https://forthebadge.com/images/badges/powered-by-phoenix.svg)](https://forthebadge.com)
 </div>
 <br/>
 
