@@ -3,5 +3,7 @@ services:
     build:
       context: .
     container_name: frontend
+    volumes:
+      - ./react:/app
     ports:
       - "80:80"
