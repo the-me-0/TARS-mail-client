@@ -6,9 +6,8 @@ FROM node:lts AS development
 # Set working directory
 WORKDIR /app
 
-# 
-COPY ./react/package.json /app/package.json
-COPY ./react/package-lock.json /app/package-lock.json
+# Copy configuration files
+COPY ./react/package*.json ./
 
 # Same as npm install
 RUN npm ci
