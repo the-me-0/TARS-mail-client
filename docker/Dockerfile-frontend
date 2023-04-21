@@ -1,0 +1,9 @@
+FROM node:16.11.1-alpine
+
+WORKDIR /app
+
+COPY ./react /app
+
+RUN npm ci
+
+CMD ["npm", "run", "dev"]

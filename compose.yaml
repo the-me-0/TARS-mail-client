@@ -1,33 +1,61 @@
 version: '3'
 services:
-  frontend:
-    build:
-      context: .
-      dockerfile: ./docker/Dockerfile.frontend
-    container_name: frontend
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    environment:
+      MONGO_VERBOSITY: "0"
+      MONGO_INITDB_DATABASE: tars_mail_db
     volumes:
-      - ./react:/app
+      - ./data:/data/db
     ports:
-      - "80:80"
+      - "27017:27017"
+    networks:
+      - tars-network
+
   backend:
     build:
       context: .
-      dockerfile: ./docker/Dockerfile.backend
+      dockerfile: ./docker/Dockerfile-backend
+    depends_on:
+      - mongo
     container_name: backend
     environment:
       MONGO_URI: mongodb://mongo:27017/mymailapp
     volumes:
       - ./express:/app
     ports:
-      - "3000:3000"
-    depends_on:
-      - mongo
-  mongo:
-    image: mongo
-    container_name: mongo
-    environment:
-      MONGO_INITDB_DATABASE: tars_mail_db
-    volumes:
-      - ./data:/data/db
+      - "4000:4000"
+    networks:
+      - tars-network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile-frontend
+    container_name: frontend
     ports:
-      - "27017:27017"
+      - "3000:3000"
+    volumes:
+      - ./react:/app:cached
+    depends_on:
+      - backend
+    networks:
+      - tars-network
+
+  nginx:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile-nginx
+    container_name: nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+    networks:
+      - tars-network
+
+networks:
+  tars-network:
+    driver: bridge
