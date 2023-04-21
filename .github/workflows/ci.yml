@@ -43,7 +43,7 @@ jobs:
       
       - name: Run ESLint on Express
         run: npx eslint ./express/
-          --config ./express.eslintrc.cjs
+          --config ./express/.eslintrc.cjs
           --ext .js,.jsx,.ts,.tsx
           --format @microsoft/eslint-formatter-sarif
           --output-file .github/workflows/jobs/eslint/eslint-express.sarif
