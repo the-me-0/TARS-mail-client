@@ -61,5 +61,5 @@ jobs:
       - name: Run Docker compose
         uses: isbang/compose-action@v1.4.1
         with:
-          compose-file: "compose.yml"
+          compose-file: "compose.yaml"
           compose-flags: "--build"
