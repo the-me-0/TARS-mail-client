@@ -46,3 +46,11 @@ jobs:
         with:
           sarif_file: eslint.sarif
           wait-for-processing: true
+
+  docker:
+    name: Docker Compose Actions Workflow
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build the stack
+        run: docker-compose up -d
