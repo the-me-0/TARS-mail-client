@@ -9,7 +9,7 @@ const port = 4000
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-connect('mongodb://mongo/tars_mail_db', { useNewUrlParser: true, useUnifiedTopology: true })
+connect('mongodb://mongo/tars_mail_db')
   .then(() => { console.log('MongoDB Connected') })
   .catch(err => { console.log(err) })
 
