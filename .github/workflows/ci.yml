@@ -35,7 +35,7 @@ jobs:
 
       - name: Run ESLint on React
         run: npx eslint ./react/
-          --config .eslintrc.cjs
+          --config ./react/.eslintrc.cjs
           --ext .js,.jsx,.ts,.tsx
           --format @microsoft/eslint-formatter-sarif
           --output-file .github/workflows/jobs/eslint/eslint-react.sarif
@@ -43,7 +43,7 @@ jobs:
       
       - name: Run ESLint on Express
         run: npx eslint ./express/
-          --config .eslintrc.cjs
+          --config ./express.eslintrc.cjs
           --ext .js,.jsx,.ts,.tsx
           --format @microsoft/eslint-formatter-sarif
           --output-file .github/workflows/jobs/eslint/eslint-express.sarif
