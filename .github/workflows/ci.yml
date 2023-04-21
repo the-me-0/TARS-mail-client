@@ -38,7 +38,7 @@ jobs:
           --config .eslintrc.cjs
           --ext .js,.jsx,.ts,.tsx
           --format @microsoft/eslint-formatter-sarif
-          --output-file sarif/eslint-react.sarif
+          --output-file .github/workflows/jobs/eslint/eslint-react.sarif
         continue-on-error: true
       
       - name: Run ESLint on Express
@@ -46,11 +46,11 @@ jobs:
           --config .eslintrc.cjs
           --ext .js,.jsx,.ts,.tsx
           --format @microsoft/eslint-formatter-sarif
-          --output-file eslint-express.sarif
+          --output-file .github/workflows/jobs/eslint/eslint-express.sarif
         continue-on-error: true
 
       - name: Upload analysis results to GitHub
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: sarif/
+          sarif_file: .github/workflows/jobs/eslint/
           wait-for-processing: true
