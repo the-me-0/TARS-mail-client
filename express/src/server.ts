@@ -1,21 +1,21 @@
 import express from 'express'
+import type { Express, Request, Response } from 'express'
 import { connect } from 'mongoose'
 import bodyParser from 'body-parser'
 
-const app = express()
+const app: Express = express()
+const port = 4000
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-connect('mongodb://mongo/tars_mail_db', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.log(err))
+connect('mongodb://mongo/tars_mail_db')
+  .then(() => { console.log('MongoDB Connected') })
+  .catch(err => { console.log(err) })
 
-app.get('/', (req, res) => {
+app.get('/', (req: Request, res: Response) => {
   res.send('hello world')
 })
-
-const port = 4000
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`)
