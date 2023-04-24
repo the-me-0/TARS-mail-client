@@ -13,7 +13,7 @@
 	justify-content: space-evenly;
   align-items: center;
 
-	@include medium {
+	@include m {
 		flex-direction: row;
 	}
 }
@@ -72,19 +72,20 @@
 		border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
 		box-shadow: 5px 5px 89px rgba(0, 102, 255, 0.21);
 		will-change: border-radius, transform, opacity;
-		animation-delay: 200ms;
+		animation-delay: 100ms;
 		background-image: linear-gradient(120deg, rgba(0,67,255,.55) 0%, rgba(0,103,255,.89) 100%);
 		animation: morph 3s linear infinite;
 		opacity: .21;
-		animation-duration: 1.5s;
+		animation-duration: 5s;
 	}
 	&:after {
-		animation-delay: 400ms;
+		animation-delay: 1500ms;
 		opacity: .89;
 		content: "TARS";
 		line-height: 40vw;
 		text-indent: 20vw;
 		font-size: 8vw;
+		animation-duration: 2s;
 
 		@include s {
 			line-height: 30vw;

@@ -4,6 +4,9 @@ WORKDIR /app
 
 COPY ./react /app
 
+# Copy the tsconfig base file
+COPY ./tsconfig.base.json /
+
 RUN npm ci
 
 CMD ["npm", "run", "dev"]

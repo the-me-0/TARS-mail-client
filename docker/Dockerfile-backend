@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy the package.json and package-lock.json files
 COPY ./express/package*.json ./
 
+# Copy the tsconfig base file
+COPY ./tsconfig.base.json /
+
 # Install the dependencies
 RUN npm install
 
